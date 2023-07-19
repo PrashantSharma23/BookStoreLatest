@@ -4,9 +4,15 @@ namespace Prashant.BookStore.Controllers
 {
     public class HomeController : Controller
     {
-        public string Index()
+        public ViewResult Index()
         {
-            return "Home_Index Method";
+            //var obj = new { id = 1, name = "Prashant" };
+            return View();
+            //return "Home_Index Method";
+        }
+        public ViewResult AboutUs()
+        {
+            return View();
         }
     }
 }
