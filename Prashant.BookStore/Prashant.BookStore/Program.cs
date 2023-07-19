@@ -1,3 +1,5 @@
+using Microsoft.Extensions.FileProviders;
+
 var builder = WebApplication.CreateBuilder(args);
 // REGISTER SERVICES HERE
 builder.Services.AddControllersWithViews();
@@ -13,11 +15,19 @@ if (env.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
 }
+app.UseStaticFiles();
+
+// use static file from other than wwwroot folder
+app.UseStaticFiles(new StaticFileOptions()
+{
+    FileProvider=new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "mystaticfiles")),
+    RequestPath= "/mystaticfiles"
+});
 app.UseRouting();
 app.MapDefaultControllerRoute();
 app.UseEndpoints(endpoints =>
 {
-   // endpoints.MapDefaultControllerRoute();
+    endpoints.MapDefaultControllerRoute();
     //endpoints.MapGet("/", async context =>
     //{
     //    if (env.IsDevelopment())
