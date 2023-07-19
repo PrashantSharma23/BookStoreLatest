@@ -4,7 +4,10 @@ var builder = WebApplication.CreateBuilder(args);
 // REGISTER SERVICES HERE
 builder.Services.AddControllersWithViews();
 
-
+//reflect latest change to browser without build
+#if DEBUG    // pre processor
+builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
+#endif
 
 var app = builder.Build();
 // REGISTER MIDDLEWARE HERE
@@ -20,8 +23,8 @@ app.UseStaticFiles();
 // use static file from other than wwwroot folder
 app.UseStaticFiles(new StaticFileOptions()
 {
-    FileProvider=new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "mystaticfiles")),
-    RequestPath= "/mystaticfiles"
+    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "mystaticfiles")),
+    RequestPath = "/mystaticfiles"
 });
 app.UseRouting();
 app.MapDefaultControllerRoute();
