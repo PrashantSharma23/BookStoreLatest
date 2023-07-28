@@ -10,7 +10,7 @@ builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 #endif
 
 var app = builder.Build();
-// REGISTER MIDDLEWARE HERE
+// REGISTER MIDDLEWARE HERE // dfg
 
 var env = app.Environment;
 
