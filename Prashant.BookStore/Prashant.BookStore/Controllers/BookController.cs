@@ -11,14 +11,20 @@ namespace Prashant.BookStore.Controllers
         {
             _bookRepository = new BookRepository();
         }
-        public List<BookModel> GetAllBooks()
+        public ViewResult GetAllBooks()
         {
-            return _bookRepository.GetAllBooks();
+            var data = _bookRepository.GetAllBooks();
+            return View(data);
         }
-        public BookModel GetBooks(int id)
+        //public BookModel GetBooks(int id)
+        //{
+        //    //return $"book no: ={id}";
+        //    return _bookRepository.GetBookById(id);
+        //}
+        public ViewResult GetBooks(int id)
         {
-            //return $"book no: ={id}";
-            return _bookRepository.GetBookById(id);
+            var bookdata = _bookRepository.GetBookById(id);
+            return View(bookdata);
         }
         public List<BookModel> SearchBook(string bookname, string author)
         {

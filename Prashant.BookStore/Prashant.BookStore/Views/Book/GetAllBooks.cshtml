@@ -1,15 +1,28 @@
-﻿
+﻿@using Prashant.BookStore.Models;
+@model IEnumerable<BookModel>;
+
 @{
-    Layout = null;
+    Layout = "_Layout";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>GetAllBooks</title>
-</head>
-<body>
-</body>
-</html>
+<div class="container">
+    <h3 class="display-4"> All Books   </h3>
+    <div class="row">
+        @foreach (var book in Model)
+        {
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img class="img-thumbnail" src="/imagess/photo.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">@book.Title</h5>
+                        <p class="card-text">@book.Description.</p>
+                        <a href="/Book/GetBooks/@book.Id" class="btn btn-primary">View Details</a>
+                        <div>
+                            <small class="text-muted">@book.Author</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

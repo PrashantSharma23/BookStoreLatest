@@ -21,11 +21,11 @@ namespace Prashant.BookStore.Repository
         {
             return new List<BookModel>()
             {
-                new BookModel() {Id=1,Title="MVC",Author="John"},
-                new BookModel() {Id=2,Title="C#",Author="Smith"},
-                new BookModel() {Id=3,Title="JAVA",Author="Lee"},
-                new BookModel() {Id=4,Title="Php",Author="sumit"},
-                new BookModel() {Id=5,Title="Python",Author="rohit"},
+                new BookModel() {Id=1,Title="MVC",Author="John",Description="MVC Book"},
+                new BookModel() {Id=2,Title="C#",Author="Smith",Description="C# Book"},
+                new BookModel() {Id=3,Title="JAVA",Author="Lee",Description="JAVA Book"},
+                new BookModel() {Id=4,Title="Php",Author="sumit",Description="PHP Book"},
+                new BookModel() {Id=5,Title="Python",Author="rohit",Description="Python Book"},
 
 
 
