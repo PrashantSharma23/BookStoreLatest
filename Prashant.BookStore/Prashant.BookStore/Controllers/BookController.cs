@@ -21,7 +21,7 @@ namespace Prashant.BookStore.Controllers
         //    //return $"book no: ={id}";
         //    return _bookRepository.GetBookById(id);
         //}
-        public ViewResult GetBooks(int id)
+        public ViewResult GetBooks(int id,string nameOfBook)
         {
             var bookdata = _bookRepository.GetBookById(id);
             return View(bookdata);

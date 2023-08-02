@@ -27,30 +27,39 @@ app.UseStaticFiles(new StaticFileOptions()
     RequestPath = "/mystaticfiles"
 });
 app.UseRouting();
-app.MapDefaultControllerRoute();
+
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapDefaultControllerRoute();
-    //endpoints.MapGet("/", async context =>
-    //{
-    //    if (env.IsDevelopment())
-    //    {
-    //        await context.Response.WriteAsync("development");
-    //    }
-    //    else if (env.IsProduction())
-    //    {
-    //        await context.Response.WriteAsync("Production");
-    //    }
-    //    else if (env.IsStaging())
-    //    {
-    //        await context.Response.WriteAsync("staging");
-    //    }
-    //    else
-    //    {
-    //        await context.Response.WriteAsync(env.EnvironmentName);
-    //    }
-    //});
+    //endpoints.MapControllerRoute(
+    //    name: "Default",
+    //    pattern: "bookApp/{controller=Home}/{action=Index}/{id?}");
 });
+
+//app.MapDefaultControllerRoute();
+//app.UseEndpoints(endpoints =>
+//{
+//    endpoints.MapDefaultControllerRoute();
+//    endpoints.MapGet("/", async context =>
+//    {
+//        if (env.IsDevelopment())
+//        {
+//            await context.Response.WriteAsync("development");
+//        }
+//        else if (env.IsProduction())
+//        {
+//            await context.Response.WriteAsync("Production");
+//        }
+//        else if (env.IsStaging())
+//        {
+//            await context.Response.WriteAsync("staging");
+//        }
+//        else
+//        {
+//            await context.Response.WriteAsync(env.EnvironmentName);
+//        }
+//    });
+//});
 
 //app.Run(async (context) =>
 //{
