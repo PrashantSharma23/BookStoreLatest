@@ -1,8 +1,6 @@
-﻿@using Prashant.BookStore.Models;
-@model IEnumerable<BookModel>;
-
+﻿@model IEnumerable<BookModel>;
 @{
-    Layout = "_Layout";
+    ViewData["Title"] = "All Books";
 }
 
 <div class="container">
@@ -12,7 +10,7 @@
         {
             <div class="col-md-4">
                 <div class="card" style="width: 18rem;">
-                    <img class="img-thumbnail" src="/imagess/photo.jpg" alt="Card image cap">
+                    <img class="img-thumbnail" src="" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">@book.Title</h5>
                         <p class="card-text">@book.Description.</p>

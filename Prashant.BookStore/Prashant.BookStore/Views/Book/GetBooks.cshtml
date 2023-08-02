@@ -1,9 +1,8 @@
-﻿@{
-    ViewData["Title"] = "GetBooks";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+﻿@model BookModel;
+
+@{
+    ViewData["Title"] = "Book Detail";
 }
-
-
 
 <div class="container">
     <h3 class="display-4">Book Details</h3>
@@ -37,6 +36,29 @@
             </div>
         </div>
         <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>@Model.Title</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-primary">
+                    <span class="lable lable primary">By:</span>
+                    <span class="monospaced">@Model.Author</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p>@Model.Description</p>
+                    <button class="btn btn-primary">Read Now</button>
+                </div>
+            </div>
+            <hr />
+            <ul class="list-group">
+                <li class="list-group-item"><span style="font-weight:bold">Category-</span>@Model.Category</li>
+                <li class="list-group-item"><span style="font-weight:bold">Total Pages-</span>@Model.TotalPages</li>
+                <li class="list-group-item"><span style="font-weight:bold">Language-</span>@Model.Language</li>
+            </ul>
         </div>
     </div>
 </div>
