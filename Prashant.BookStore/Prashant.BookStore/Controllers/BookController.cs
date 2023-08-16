@@ -21,7 +21,7 @@ namespace Prashant.BookStore.Controllers
         //    //return $"book no: ={id}";
         //    return _bookRepository.GetBookById(id);
         //}
-        public ViewResult GetBooks(int id,string nameOfBook)
+        public ViewResult GetBooks(int id, string nameOfBook)
         {
             var bookdata = _bookRepository.GetBookById(id);
             return View(bookdata);
@@ -29,6 +29,16 @@ namespace Prashant.BookStore.Controllers
         public List<BookModel> SearchBook(string bookname, string author)
         {
             return _bookRepository.SearchBook(bookname, author);
+        }
+
+        public ViewResult AddNewBook()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ViewResult AddNewBook(BookModel bookModel)
+        {
+            return View();
         }
     }
 }
